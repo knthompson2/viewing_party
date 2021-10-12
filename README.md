@@ -94,7 +94,7 @@ To register for an API key, click the [API Link](https://www.themoviedb.org/sett
 |             |               | Bootstrap     |
 ## Contributors
 
-👤  **Dee Hill**
+👤  **Kelsey Thompson**
 - [GitHub](https://github.com/knthompson2)
 - [LinkedIn](https://www.linkedin.com/in/knthompson2/)
 
