@@ -66,7 +66,7 @@ Below are skills that are more general/necessary on the job that are practiced b
 Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party/wireframes)
 
 ## Database Schema
-![Screen Shot 2021-08-23 at 7 05 58 PM](https://user-images.githubusercontent.com/77654906/131545833-83efa764-018f-4e9b-9a94-4f67c226d094.png)
+![Screen Shot 2021-10-11 at 8 52 54 PM](https://user-images.githubusercontent.com/77654906/136877784-0afaafb4-f9c7-4a85-a94a-422d5f9d545e.png)
 
 ## API
 Welcome to version 3 of The Movie Database (TMDB) API. Below you will find a current list of the available methods on our movie, tv, actor and image API. If you need help or support, please head over to our [API Support From](https://www.themoviedb.org/talk/category/5047958519c29526b50017d6)
