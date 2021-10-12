@@ -95,8 +95,8 @@ To register for an API key, click the [API Link](https://www.themoviedb.org/sett
 ## Contributors
 
 👤  **Dee Hill**
-- [GitHub](https://github.com/deebot10)
-- [LinkedIn](https://www.linkedin.com/in/dee-hill/)
+- [GitHub](https://github.com/knthompson2)
+- [LinkedIn](https://www.linkedin.com/in/knthompson2/)
 
 👤  **Ezzedine Alwafai**
 - [GitHub](https://github.com/ealwafai)
