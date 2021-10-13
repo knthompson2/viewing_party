@@ -14,6 +14,6 @@ RSpec.describe 'Log Out' do
     expect(page).to have_link("New to Viewing Party? Register Here")
     expect(page).to have_content("You've been logged out")
     expect(page).to have_button("Sign In")
-    expect(page).to_not have_link("Log Out")
+    expect(page).to_not have_link("Sign Out")
   end
 end
