@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       flash[:success] = "You've successfully registered. You can now log in!"
     else
       redirect_to new_user_path
-      flash[:error] = "Sorry, you have missing or invalid credentials!"
+      flash[:error] = 'Sorry, you have missing or invalid credentials!'
     end
   end
 
