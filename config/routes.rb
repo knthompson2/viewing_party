@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/discover', to: 'discover#index'
+  get '/movies', to: 'movies#index'
 
   resources :users, only: [:new, :create] do
     get '/dashboard', to: 'users#show'
