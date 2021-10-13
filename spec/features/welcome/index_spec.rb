@@ -27,13 +27,13 @@ RSpec.describe "welcome page" do
     fill_in :username, with: "username1"
     fill_in :password, with: "incorrect password"
     click_on "Sign In"
-    save_and_open_page
     expect(current_path).to eq(root_path)
     expect(page).to have_content("Sorry, your credentials are bad.")
   end
   #
-  # it 'has a link to register as new user' do
-  #   visit root_path
-  #   expect(page).to_have link_to("New to Viewing Party? Register Here")
-  # end
+  it 'has a link to register as new user' do
+    visit root_path
+    click_link("New to Viewing Party? Register Here")
+    expect(current_path).to eq(new_user_path)
+  end
 end
