@@ -11,7 +11,6 @@ RSpec.describe "welcome page" do
     user_1 = User.create!(username: "username1", email: "testemail@gmail.com", password: "moviesRcool")
     visit root_path
     fill_in :email, with: "testemail@gmail.com"
-    fill_in :username, with: "username1"
     fill_in :password, with: "moviesRcool"
     click_button("Sign In")
     expect(current_path).to eq(user_dashboard_path(user_1))
@@ -24,7 +23,6 @@ RSpec.describe "welcome page" do
     visit root_path
 
     fill_in :email, with: "testemail@gmail.com"
-    fill_in :username, with: "username1"
     fill_in :password, with: "incorrect password"
     click_on "Sign In"
     expect(current_path).to eq(root_path)
