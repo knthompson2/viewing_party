@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     user[:email] = user[:email].downcase
     new_user = User.create(user)
     if new_user.save
-      redirect_to root_path
+      session[:user_id] = new_user.id
+      redirect_to user_dashboard_path(new_user)
       flash[:success] = "You've successfully registered. You can now log in!"
     else
       redirect_to new_user_path
