@@ -1,15 +1,18 @@
-<h1> Welcome to Viewing Party </h1>
-<h3>This app lets you watch movies with friends!</h3>
-
-
-<%= form_with url: login_path, method: :post, local: true do |f| %>
-  <%= f.label :email, "Email:" %>
-  <%= f.text_field :email %>
-  <%= f.label :username, "Username:" %>
-  <%= f.text_field :username %>
-  <%= f.label :password, "Password:" %>
-  <%= f.password_field :password %>
-  <%= f.submit "Sign In" %>
-<% end %>
-
-<%= link_to "New to Viewing Party? Register Here", new_user_path %>
+<div class="container flex-wrap-reverse gray center full-radius padding mb-3 mt-150">
+  <div class="row item-center center-it-all">
+    <h1>Welcome to Viewing Party</h1>
+    <h5>
+      This app lets you watch movies with friends!
+    </h5>
+  </div>
+  <h5></h5>
+  <br>
+  <div class="mb-3 row">
+    <%= form_with url: login_path, method: :post, local: true do |f| %>
+    <%= f.text_field :email, placeholder: "Email"%><br><br>
+    <%= f.password_field :password, placeholder: "Password"%><br><br>
+    <%= f.submit "Sign In", class: "btn btn-outline-dark"%>
+    <% end %>
+  </div>
+  <%= link_to "New to Viewing Party? Register Here", new_user_path %>
+</div>

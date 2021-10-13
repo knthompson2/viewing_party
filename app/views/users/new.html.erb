@@ -1,10 +1,16 @@
-<h1>Create New User</h1>
-<%= form_with model: @user, local: true do |form| %>
-  <%= form.label :email, 'Email:' %>
-  <%= form.text_field :email %>
-  <%= form.label :username, 'Username:' %>
-  <%= form.text_field :username %>
-  <%= form.label :password, 'Password:' %>
-  <%= form.password_field :password %>
-  <%= form.submit 'Create User' %>
-<% end %>
+<div class="container flex-wrap-reverse gray center full-radius padding mb-3 mt-150">
+  <div class="row item-center center-it-all">
+    <h1>Create New User</h1>
+  </div>
+  <h5></h5>
+  <br>
+  <div class="mb-3 row">
+    <%= form_with model: @user, local: true do |form| %>
+    <%= form.text_field :email, placeholder: "Email"%><br><br>
+    <%= form.text_field :username, placeholder: "Username"%><br><br>
+    <%= form.password_field :password, placeholder: "Password"%><br><br>
+    <%= form.password_field :password_confirmation, placeholder: "Confirm Password" %><br><br>
+    <%= form.submit 'Create User', class: "btn btn-outline-dark"%>
+    <% end %>
+  </div>
+</div>
