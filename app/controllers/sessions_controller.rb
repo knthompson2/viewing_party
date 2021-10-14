@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     user = User.find_by(email: params[:email])
@@ -9,7 +8,7 @@ class SessionsController < ApplicationController
       flash[:success] = "Welcome, #{user.username}!"
       redirect_to user_dashboard_path(user)
     else
-      flash[:error] = "Sorry, your credentials are bad."
+      flash[:error] = 'Sorry, your credentials are bad.'
       redirect_to root_path
     end
   end
