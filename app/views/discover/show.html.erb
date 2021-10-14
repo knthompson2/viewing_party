@@ -1,8 +1,11 @@
-<h1> Welcome, <%= current_user.username %>!</h1>
+<div class="text-center mt-5">
+  <%= button_to "Find Top Rated Movies", movies_path, method: :get, local: true ,class: "btn btn-sm btn-light button-bg btn-outline-dark"%>
+  <br>
 
-<%= button_to "Find Top Rated Movies", movies_path, method: :get, local: true ,class: "btn btn-sm btn-light button-bg btn-outline-dark"%>
-
-<%= form_with url: movies_path, method: :get, local: true do |f| %>
+  <br>
+  <%= form_with url: movies_path, method: :get, local: true do |f| %>
   <%= f.text_field :search, placeholder: "Search by movie title"%>
+
   <%= f.submit 'Find Movies', class: 'btn btn-outline-primary' %>
-<% end %>
+  <% end %>
+</div>

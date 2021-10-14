@@ -1,7 +1,22 @@
-<h1>Welcome <%= current_user.username %></h1>
-<% @top_40.each do |movie| %>
-<ul>
-  <li><%= button_to movie.title, movie_path(movie), class: "btn btn-sm btn-light button-bg btn-outline-dark"%></li>
-  <li>Average Vote: <%= movie.rating %></li>
-</ul>
-<% end %>
+<% if @movies%>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Rating</th>
+      </tr>
+    </thead>
+    <% @movies.each do |movie| %>
+    <div>
+      <tbody>
+        <tr>
+          <td><%= button_to movie.title, movie_path(movie), class: 'btn btn-sm btn-light button-bg btn-outline-dark' %></td>
+          <td>Average Vote: <%= movie.rating %></td>
+        </tr>
+      </tbody>
+    </div>
+    <% end %>
+  </table>
+<% end  %>
+
+<%= link_to 'back', discover_path(@current_user) %>
