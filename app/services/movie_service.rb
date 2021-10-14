@@ -1,49 +1,50 @@
 class MovieService
-  def top_rated_movies(page)
+  def movie_search(title)
+    response = conn("/search/movie").get do |f|
+      f.params['api_key'] = ENV['movie_key']
+      f.params['query'] = title
+      f.params['include_adult'] = false
+    end
+    parse_json(response)[:results]
+  end
+
+  def self.top_rated_movies(page)
     response = conn("/movie/top_rated").get do |f|
       f.params['api_key'] = ENV['movie_key']
       f.params['language'] = 'en-US'
       f.params['page'] = page
     end
-    data = parse_json(response)
-    data[:results]
-  end
-
-  def top_40_movies
-    top_rated_movies('1') + top_rated_movies('2')
+    parse_json(response)[:results]
   end
 
   def movie_genres(movie_id)
     response = conn("/movie/#{movie_id}").get do |f|
       f.params['api_key'] = ENV['movie_key']
     end
-    data = parse_json(response)
-    data[:genres]
+    parse_json(response)[:genres]
   end
 
   def get_reviews(movie_id)
     response = conn("/movie/#{movie_id}/reviews").get do |f|
       f.params['api_key'] = ENV['movie_key']
     end
-    data = parse_json(response)
-    data[:results]
+    parse_json(response)[:results]
   end
 
   def get_cast_members(movie_id)
     response = conn("/movie/#{movie_id}/credits").get do |f|
       f.params['api_key'] = ENV['movie_key']
     end
-    data = parse_json(response)
-    data[:cast][0..9]
+    parse_json(response)[:cast]
   end
 
   private
 
-  def conn(url)
+  def self.conn(url)
     Faraday.new("https://api.themoviedb.org/3#{url}")
   end
 
-  def parse_json(response)
+  def self.parse_json(response)
     JSON.parse(response.body, symbolize_names: true)
   end
 end
