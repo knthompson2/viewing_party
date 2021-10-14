@@ -22,4 +22,16 @@ RSpec.describe 'Movies index' do
     expect(page).to have_button("The Godfather")
     expect(page).to have_content("8.7")
   end
+
+  it 'displays a link to find top rated movies' do
+    visit movies_path
+
+    expect(page).to have_button("Find Top Rated Movies")
+  end
+
+  it 'displays a form to find movies by title' do
+    visit movies_path
+
+    expect(page).to have_button("Find Movies")
+  end
 end

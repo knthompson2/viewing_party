@@ -10,5 +10,32 @@ RSpec.describe MovieFacade do
         expect(top_40_movies.count).to eq(40)
       end
     end
+
+    describe '.search_by_title' do
+      it 'returns a list of 40 movies searched by title' do
+        search_results = MovieFacade.search_by_title("The")
+
+        expect(search_results).to be_a(Array)
+        expect(search_results.count).to eq(40)
+      end
+    end
+
+    # describe '.search_by_id' do
+    #   it 'returns a movie by movie_id' do
+    #     search_results = MovieFacade.search_by_id(238)
+    #     expect(search_results.title).to eq("The Godfather")
+    #
+    #   end
+    # end
+
+    describe '.cast_members' do
+      it 'returns a list of cast members by movie' do
+        cast_list = MovieFacade.cast_members(238)
+
+        expect(cast_list).to be_a(Array)
+        expect(cast_list.count).to eq(10)
+        expect(cast_list.first.name).to eq("Marlon Brando")
+      end
+    end
   end
 end
