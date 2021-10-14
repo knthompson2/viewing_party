@@ -37,5 +37,15 @@ RSpec.describe MovieFacade do
         expect(cast_list.first.name).to eq("Marlon Brando")
       end
     end
+
+    describe '.movie_reviews' do
+      it 'returns a list of reviews by movie' do
+        reviews = MovieFacade.movie_reviews(238)
+
+        expect(reviews).to be_a(Array)
+        expect(reviews.count).to eq(1)
+        expect(reviews.first.author).to eq("futuretv")
+      end
+    end
   end
 end

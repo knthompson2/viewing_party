@@ -15,7 +15,5 @@ class Movie
     @rating = info[:vote_average]
     @runtime = info[:runtime]
     # @genres = info[:genres].map {|genre| genre[:name]}
-    @cast = info[:cast]
-    @reviews = info[:reviews]
   end
 end

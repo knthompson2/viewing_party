@@ -20,10 +20,10 @@ class MovieService
     parse_json(response)[:results]
   end
 
-  def self.movie_genres(movie_id)
-    response = conn.get("/3/movie/#{movie_id}")
-    parse_json(response)[:genres]
-  end
+  # def self.movie_genres(movie_id)
+  #   response = conn.get("/3/movie/#{movie_id}")
+  #   parse_json(response)[:genres]
+  # end
 
   def self.get_reviews(movie_id)
     response = conn.get("/3/movie/#{movie_id}/reviews")
