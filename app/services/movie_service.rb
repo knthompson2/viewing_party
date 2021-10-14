@@ -8,6 +8,11 @@ class MovieService
     parse_json(response)[:results]
   end
 
+  def self.search_by_id(movie_id)
+    response = conn.get("/3/movie/#{movie_id}")
+    parse_json(response)
+  end
+
   def self.top_rated_movies(page)
     response = conn.get("/3/movie/top_rated") do |f|
       f.params['page'] = page

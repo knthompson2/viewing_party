@@ -6,4 +6,8 @@ class MoviesController < ApplicationController
       @movies = MovieFacade.top_40_movies
     end
   end
+
+  def show
+
+  end
 end

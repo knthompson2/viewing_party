@@ -12,4 +12,17 @@ class MovieFacade
       Movie.new(movie_data)
     end
   end
+
+  def self.search_by_id(movie_id)
+    movie = MovieService.search_by_id(movie_id)
+    Movie.new(movie)
+  end
+
+  def self.cast_members(movie_id)
+    data = MovieService.get_cast_members(movie_id)
+
+    data[:cast][0..9].map do |actor_data|
+      Actor.new(actor_data)
+    end
+  end
 end
