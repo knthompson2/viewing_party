@@ -1,6 +1,7 @@
+<h1>Welcome <%= current_user.username %></h1>
 <% @top_40.each do |movie| %>
 <ul>
   <li><%= button_to movie.title, movie_path(movie), class: "btn btn-sm btn-light button-bg btn-outline-dark"%></li>
-  <li><%= movie.rating %></li>
+  <li>Average Vote: <%= movie.rating %></li>
 </ul>
 <% end %>
