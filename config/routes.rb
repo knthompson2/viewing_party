@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 
   get '/discover', to: 'discover#show'
 
   resources :movies, only: [:index, :show]
-  
+
   resources :users, only: [:new, :create] do
     get '/dashboard', to: 'users#show'
   end

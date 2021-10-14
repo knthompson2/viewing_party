@@ -1,7 +1,8 @@
 class MovieService
-  def self.movie_search(title)
+  def self.movie_search(title, page)
     response = conn.get('/3/search/movie') do |f|
       f.params['query'] = title
+      f.params['page'] = page
       f.params['include_adult'] = false
     end
     parse_json(response)[:results]

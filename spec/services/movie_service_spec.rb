@@ -35,4 +35,16 @@ RSpec.describe MovieService do
     expect(cast_members.first).to have_key(:name)
     expect(cast_members.first).to have_key(:character)
   end
+
+  it 'returns a list of movies by title search by page number' do
+    title_search = MovieService.movie_search("The", 1)
+
+    expect(title_search).to be_a(Array)
+    expect(title_search.first).to have_key(:id)
+    expect(title_search.first).to have_key(:title)
+    expect(title_search.first).to have_key(:overview)
+    expect(title_search.first).to have_key(:vote_average)
+    expect(title_search.first).to have_key(:poster_path)
+    expect(title_search.count).to eq(20)
+  end
 end

@@ -3,9 +3,5 @@
   <br>
 
   <br>
-  <%= form_with url: movies_path, method: :get, local: true do |f| %>
-  <%= f.text_field :search, placeholder: "Search by movie title"%>
-
-  <%= f.submit 'Find Movies', class: 'btn btn-outline-primary' %>
-  <% end %>
+  <%= render partial: 'shared/movie_search' %>
 </div>
