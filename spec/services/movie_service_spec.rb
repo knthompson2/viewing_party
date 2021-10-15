@@ -13,7 +13,7 @@ RSpec.describe MovieService do
     expect(top_movies.count).to eq(20)
   end
 
-  it 'returns an array of movie genres by movie id' do
+  xit 'returns an array of movie genres by movie id' do
     movie_genre = MovieService.movie_genres(238)
 
     expect(movie_genre).to be_a(Array)
@@ -46,5 +46,15 @@ RSpec.describe MovieService do
     expect(title_search.first).to have_key(:vote_average)
     expect(title_search.first).to have_key(:poster_path)
     expect(title_search.count).to eq(20)
+  end
+
+  it 'returns a movie by movie id' do
+    movie = MovieService.search_by_id(238)
+
+    expect(movie).to have_key(:id)
+    expect(movie).to have_key(:title)
+    expect(movie).to have_key(:overview)
+    expect(movie).to have_key(:vote_average)
+    expect(movie).to have_key(:poster_path)
   end
 end
