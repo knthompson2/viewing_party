@@ -1,3 +1,10 @@
+  <div class="movie_search">
+    <%= button_to "Find Top Rated Movies", movies_path, method: :get, local: true ,class: "btn btn-sm btn-light button-bg btn-outline-dark"%>
+    <%= render partial: 'shared/movie_search' %>
+  </div>
+
+
+
 <% if @movies%>
   <table class="table">
     <thead>
@@ -10,7 +17,7 @@
     <div>
       <tbody>
         <tr>
-          <td><%= button_to movie.title, movie_path(movie), class: 'btn btn-sm btn-light button-bg btn-outline-dark' %></td>
+          <td><%= button_to movie.title, movie_path(movie.id), method: :get, class: 'btn btn-sm btn-light button-bg btn-outline-dark' %></td>
           <td>Average Vote: <%= movie.rating %></td>
         </tr>
       </tbody>

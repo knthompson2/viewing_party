@@ -1,7 +1,8 @@
 class MovieService
-  def self.movie_search(title)
+  def self.movie_search(title, page)
     response = conn.get('/3/search/movie') do |f|
       f.params['query'] = title
+      f.params['page'] = page
       f.params['include_adult'] = false
     end
     parse_json(response)[:results]
@@ -19,10 +20,10 @@ class MovieService
     parse_json(response)[:results]
   end
 
-  def self.movie_genres(movie_id)
-    response = conn.get("/3/movie/#{movie_id}")
-    parse_json(response)[:genres]
-  end
+  # def self.movie_genres(movie_id)
+  #   response = conn.get("/3/movie/#{movie_id}")
+  #   parse_json(response)[:genres]
+  # end
 
   def self.get_reviews(movie_id)
     response = conn.get("/3/movie/#{movie_id}/reviews")
