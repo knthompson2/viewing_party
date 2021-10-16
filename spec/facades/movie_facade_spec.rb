@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe MovieFacade do
   describe "class methods" do
-    describe '.top_40_movies' do
+    describe '.top_40_movies', :vcr do
       it 'returns a list of 40 top rated movies' do
         top_40_movies = MovieFacade.top_40_movies
 
@@ -11,7 +11,7 @@ RSpec.describe MovieFacade do
       end
     end
 
-    describe '.search_by_title' do
+    describe '.search_by_title', :vcr do
       it 'returns a list of 40 movies searched by title' do
         search_results = MovieFacade.search_by_title("The")
 
@@ -20,7 +20,7 @@ RSpec.describe MovieFacade do
       end
     end
 
-     describe '.search_by_id' do
+     describe '.search_by_id', :vcr do
        it 'returns a movie by movie_id' do
          search_results = MovieFacade.search_by_id(238)
          expect(search_results.title).to eq("The Godfather")
@@ -28,7 +28,7 @@ RSpec.describe MovieFacade do
        end
      end
 
-    describe '.cast_members' do
+    describe '.cast_members', :vcr do
       it 'returns a list of cast members by movie' do
         cast_list = MovieFacade.cast_members(238)
 
@@ -38,7 +38,7 @@ RSpec.describe MovieFacade do
       end
     end
 
-    describe '.movie_reviews' do
+    describe '.movie_reviews', :vcr do
       it 'returns a list of reviews by movie' do
         reviews = MovieFacade.movie_reviews(238)
 
