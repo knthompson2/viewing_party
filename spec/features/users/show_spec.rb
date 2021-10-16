@@ -16,8 +16,14 @@ RSpec.describe 'User dashboard' do
   end
 
   it 'displays a friends section' do
+    friend = User.create!(email: "test123@gmail.com", username: "test123", password: "test", password_confirmation: "test")
     expect(page).to have_content("Friends")
-    # expect(page).to have_button("Add Friend")
+    expect(page).to have_content("You currently have no friends.")
+    fill_in :search, with: friend.email
+    click_button "Add Friend"
+    expect(current_path).to eq(user_dashboard_path(@user))
+    expect(page).to have_content(friend.username)
+    expect(page).to have_content("You've successfully added a new friend!")
   end
 
   it 'displays a viewing parties section' do
