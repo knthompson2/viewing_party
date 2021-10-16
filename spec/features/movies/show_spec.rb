@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Movie show page" do
-  it 'displays movie attributes' do
+  it 'displays movie attributes', :vcr do
     movie = MovieFacade.search_by_id(238)
 
     visit movie_path(movie.id)
