@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create] do
     get '/dashboard', to: 'users#show'
   end
+  resources :friendships, only: [:create]
 end

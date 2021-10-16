@@ -10,7 +10,7 @@ class MovieService
 
   def self.search_by_id(movie_id)
     response = conn.get("/3/movie/#{movie_id}")
-    var = parse_json(response)
+    parse_json(response)
   end
 
   def self.top_rated_movies(page)
