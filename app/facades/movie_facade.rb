@@ -13,7 +13,7 @@ class MovieFacade
     end
   end
 
-  #retrieve genre from here
+  # retrieve genre from here
   def self.search_by_id(movie_id)
     movie = MovieService.search_by_id(movie_id)
     Movie.new(movie)

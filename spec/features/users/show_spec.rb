@@ -66,7 +66,6 @@ RSpec.describe 'User dashboard' do
 
     fill_in :email, with: @user.email
     click_button "Add Friend"
-    save_and_open_page
 
     expect(page).to have_content("You cannot add yourself as a friend")
   end
