@@ -20,13 +20,13 @@ RSpec.describe MovieFacade do
       end
     end
 
-    # describe '.search_by_id' do
-    #   it 'returns a movie by movie_id' do
-    #     search_results = MovieFacade.search_by_id(238)
-    #     expect(search_results.title).to eq("The Godfather")
-    #
-    #   end
-    # end
+     describe '.search_by_id' do
+       it 'returns a movie by movie_id' do
+         search_results = MovieFacade.search_by_id(238)
+         expect(search_results.title).to eq("The Godfather")
+
+       end
+     end
 
     describe '.cast_members' do
       it 'returns a list of cast members by movie' do

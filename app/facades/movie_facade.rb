@@ -14,15 +14,13 @@ class MovieFacade
   end
 
   #retrieve genre from here
-  # def self.search_by_id(movie_id)
-  #   movie = MovieService.search_by_id(movie_id)
-  #   binding.pry
-  #   Movie.new(movie)
-  # end
+  def self.search_by_id(movie_id)
+    movie = MovieService.search_by_id(movie_id)
+    Movie.new(movie)
+  end
 
   def self.cast_members(movie_id)
     data = MovieService.get_cast_members(movie_id)
-
     data[0..9].map do |actor_data|
       Actor.new(actor_data)
     end
@@ -30,7 +28,6 @@ class MovieFacade
 
   def self.movie_reviews(movie_id)
     reviews = MovieService.get_reviews(movie_id)
-
     reviews.map do |review_data|
       Review.new(review_data)
     end

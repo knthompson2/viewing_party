@@ -5,6 +5,5 @@ class Actor
   def initialize(info)
     @name = info[:name]
     @character = info[:character]
-
   end
 end

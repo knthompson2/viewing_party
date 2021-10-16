@@ -1,0 +1,22 @@
+<h1><%= @movie.title %></h1>
+<p>Vote Average: <%= @movie.rating %></p>
+<p>Runtime: <%= @movie.runtime %></p>
+
+<p>Genre(s): <%= @movie.genres.join(", ") %></p>
+
+
+<h2>Summary</h2>
+<p><%= @movie.overview %></p>
+
+<h2>Cast</h2>
+<% @movie.cast.each do |actor| %>
+  <p><%= actor.name %> as <%= actor.character %></p>
+<% end %>
+
+<h2><%= @movie.reviews.size %> Review(s)</h2>
+  <% @movie.reviews.each do |review| %>
+    <div>
+      <p>Author: <%= review.author %></p>
+      <p><%= review.review %></p>
+    </div>
+  <% end %>
