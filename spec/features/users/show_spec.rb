@@ -46,7 +46,7 @@ RSpec.describe 'User dashboard' do
     visit user_dashboard_path(@user)
     fill_in :email, with: friend1.email
     click_button "Add Friend"
-    save_and_open_page
+    
     expect(page).to have_content("You are already friends with that person")
   end
 
@@ -57,7 +57,6 @@ RSpec.describe 'User dashboard' do
 
     fill_in :email, with: "friend4@gmail.com"
     click_button "Add Friend"
-    save_and_open_page
 
     expect(page).to have_content("Invalid email. You have not added a new friend.")
   end

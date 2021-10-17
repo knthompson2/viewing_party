@@ -16,4 +16,5 @@ Rails.application.routes.draw do
     get '/dashboard', to: 'users#show'
   end
   resources :friendships, only: [:create]
+  resources :parties, only: [:new, :create]
 end

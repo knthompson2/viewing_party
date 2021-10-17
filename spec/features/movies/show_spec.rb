@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe "Movie show page" do
-  it 'displays movie attributes', :vcr do
+  before :each do
     movie = MovieFacade.search_by_id(238)
 
     visit movie_path(movie.id)
+  end
 
+  it 'displays movie attributes', :vcr do
     expect(page).to have_content(movie.title)
     expect(page).to have_content(movie.overview)
     expect(page).to have_content(movie.rating)
@@ -21,5 +23,11 @@ RSpec.describe "Movie show page" do
       expect(page).to have_content(review.author)
       expect(page).to have_content("The rejected offer starts what turns into an all out mafia war")
     end
+  end
+
+  it 'links a viewing party for that movie', :vcr do
+    expect(page).to have_button("Create Viewing Party for Movie")
+    click_button "Create Viewing Party for Movie"
+    expect(current_path).to eq(new_party_path)
   end
 end
