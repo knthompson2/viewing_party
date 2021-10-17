@@ -6,27 +6,30 @@
         Viewing Party Details
       </h5>
       <h6 class="card-subtitle mb-2">
+        <h6>Movie Title <%= @movie.title %></h6>
         <%= form_with model: @party, local: true do |f| %>
-        <%= f.hidden_field :movie_id, id: :movie_id, value: params[:movie_id] %>
-        <%= f.label :title, 'Movie Title' %>
-        <%= f.label :title, params[:title] %><br>
-        <%= f.label :duration, 'Duration of Party' %>
-        <%= f.number_field :duration, id: :duration, min: params[:duration], max: 480, value: params[:duration] %><br>
-        <%= f.label :date, 'Day' %>
-        <%= f.date_field :date, id: :date, min: Date.today %><br>
-        <%= f.label :start_time, 'Start Time' %>
-        <%= f.time_select :start_time, {minute_step: 15, ampm: true}, id: :start_time %>
-        <br>
-        <br>
-        <h5>Friends:</h5>
-        <% current_user.friends.each do |friend| %>
-        <%= friend.username %>
-        <% end %>
-        <br>
-        <%= f.submit 'Create Party', class: "btn btn-sm btn-light button-bg btn-outline-dark" %>
-        <% end %>
-        <% else %>
-        <h3>Please Log In to Create Viewing Parties</h3>
+          <%= f.hidden_field :movie_id, id: :movie_id, value: params[:movie_id] %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.label :duration, 'Duration of Party' %>
+          <%= f.number_field :duration, id: :duration, min: @movie.runtime, max: 480, value: @movie.runtime %><br>
+          <%= f.label :date, 'Day' %>
+          <%= f.date_field :date, id: :date, min: Date.today %><br>
+          <%= f.label :start_time, 'Start Time' %>
+          <%= f.time_select :start_time, {minute_step: 15, ampm: true}, id: :start_time %>
+          <br>
+          <br>
+          <h5>Friends:</h5>
+          <% if !current_user.friends.empty? %><br/>
+            <%= f.collection_check_boxes(:friends, current_user.friends, :id, :username, include_hidden: false) do |friend|  %>
+              <%= friend.label %>
+              <%= friend.check_box(class: "btn btn-sm btn-outline-dark btn-light navbar-custom") %><br/><br/>
+            <% end %>
+          <% end %>
+          <br>
+          <%= f.submit 'Create Party', class: "btn btn-sm btn-light button-bg btn-outline-dark" %>
+          <% end %>
+          <% else %>
+          <h3>Please Log In to Create Viewing Parties</h3>
         <% end %>
       </h6>
     </div>

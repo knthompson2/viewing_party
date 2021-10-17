@@ -1,5 +1,5 @@
 <h1><%= @movie.title %></h1>
-<%= button_to 'Create Viewing Party for Movie', new_party_path, method: :get, class: "btn btn-sm btn-light button-bg btn-outline-dark"%>
+<%= button_to 'Create Viewing Party for Movie', new_party_path, params: {movie_id: @movie.id}, method: :get, class: "btn btn-sm btn-light button-bg btn-outline-dark"%>
 <br>
 <p>Vote Average: <%= @movie.rating %></p>
 <p>Runtime: <%= @movie.runtime %></p>
