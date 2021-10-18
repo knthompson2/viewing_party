@@ -6,5 +6,6 @@ class Party < ApplicationRecord
   validates :movie_id, presence: true
 
   belongs_to :user
+  has_many :invitees
   has_many :users, through: :invitees
 end
