@@ -6,12 +6,12 @@ class PartiesController < ApplicationController
 
   def create
     # require "pry"; binding.pry
-    party = Party.new(party_params)
+    party = Party.create(party_params)
     if party.save
       params[:party][:users].each do |user|
-        Invitee.new(user_id: user, party_id: party.id)
+        Invitee.create(user_id: user, party_id: party.id)
       end
-      Invitee.new(user: current_user, party: party)
+      Invitee.create(user: current_user, party: party)
       redirect_to user_dashboard_path(current_user)
       flash[:success] = "Time to Party!"
     else

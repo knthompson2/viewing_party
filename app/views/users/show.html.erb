@@ -1,4 +1,4 @@
-<h1> Welcome, <%= current_user.username %>!</h1>
+<h1> Welcome, <%= @user.username %>!</h1>
 
 <%= link_to "Discover Movies", discover_path, class: "btn btn-sm btn-light button-bg btn-outline-dark" %>
 
@@ -10,10 +10,10 @@
       <%= f.submit "Add Friend" %>
     <% end %>
 
-    <% if current_user.friends.empty? %>
+    <% if @user.friends.empty? %>
         You currently have no friends.
     <% else %>
-        <% current_user.friends.each do |friend| %>
+        <% @user.friends.each do |friend| %>
 
           <%= friend.username %>
         <% end %>
@@ -23,14 +23,14 @@
 
 <section id="Viewing Parties">
   <h2>Viewing Parties</h2>
-  <% if current_user.parties.nil? %>
+  <% if @user.parties.count == 0 %>
     <p> You have no scheduled parties! </p>
   <% else %>
-    <% current_user.parties.each do |party|  %>
+    <% @user.parties.each do |party|  %>
       <%= party.title %>
       <%= party.date %>
       <%= party.start_time %>
-      <% if party.host == current_user.id %>
+      <% if party.host == @user.id %>
           <p> Hosting </p>
       <% else %>
           <p> Invited </p>

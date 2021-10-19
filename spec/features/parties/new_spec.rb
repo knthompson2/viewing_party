@@ -42,8 +42,9 @@ RSpec.describe "Viewing party new" do
     check 'friend 1'
 
     click_on "Create Party"
+    save_and_open_page
     expect(current_path).to eq(user_dashboard_path(@user))
-    # expect(page).to have_content(@party.title)
+    expect(page).to have_content(@party.title)
     expect(page).to have_content("Time to Party!")
   end
 
