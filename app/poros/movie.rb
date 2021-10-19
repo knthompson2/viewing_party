@@ -17,6 +17,10 @@ class Movie
     @image = "https://image.tmdb.org/t/p/original#{info[:poster_path]}"
   end
 
+  def reformatted_runtime
+    "#{@runtime.to_i/60}h #{@runtime.to_i % 60}min"
+  end
+
   def cast
     MovieFacade.cast_members(id)
   end

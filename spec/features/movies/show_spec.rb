@@ -10,10 +10,11 @@ RSpec.describe "Movie show page" do
   end
 
   it 'displays movie attributes', :vcr do
+    save_and_open_page
     expect(page).to have_content(@movie.title)
     expect(page).to have_content(@movie.overview)
     expect(page).to have_content(@movie.rating)
-    expect(page).to have_content(@movie.runtime)
+    expect(page).to have_content(@movie.reformatted_runtime)
     expect(page).to have_content(@movie.genres.join(", "))
 
     @movie.cast.each do |actor|
