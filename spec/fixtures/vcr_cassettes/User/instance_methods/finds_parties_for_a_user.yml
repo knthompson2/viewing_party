@@ -1,0 +1,149 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=6519ceb9368c144d4aa93f3b6dc61d81
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 19 Oct 2021 14:37:37 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - b021e697221748056c5219e84893ed30965992af
+      X-Memc-Age:
+      - '3640'
+      X-Memc-Expires:
+      - '10921'
+      Etag:
+      - W/"0b5c0e70eb700afcbddfd2bcb153327a"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e3ce71488ee3e7e6111c598300de968b.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DFW55-C3
+      X-Amz-Cf-Id:
+      - zkwPSwKZWc6QnTx0v_5X2hBkEm5MLhAZeMcTmk8EFCQ4EkBkSINEyg==
+      Age:
+      - '574'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg","backdrop_path":"/pGl7NqNhyncju3Qu8LGA7owciMW.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":76.989,"poster_path":"/eEslKSwcqmiNS6va24Pbxf2UKmJ.jpg","production_companies":[{"id":4,"logo_path":"/fycMZt242LVjagMByZOLUGbCvv3.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.7,"vote_count":14925}'
+  recorded_at: Tue, 19 Oct 2021 14:47:12 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/239?api_key=6519ceb9368c144d4aa93f3b6dc61d81
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 19 Oct 2021 14:37:38 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 66f33113d280ca0dda40ad277034822b717cb5ed
+      X-Memc-Age:
+      - '13236'
+      X-Memc-Expires:
+      - '4587'
+      Etag:
+      - W/"8267ad1a20ca6663387d930ac938459d"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 577273d20f67bdda8ecef32c0abb4bd2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DFW55-C3
+      X-Amz-Cf-Id:
+      - iy_zNzUMc_AIWD4Gq3Wh4jrsPQbqvof-_VFglhaPOxysKIhJEjqwFg==
+      Age:
+      - '574'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/iSbhQqeDnkvFuP7QWwy0qeX0LYy.jpg","belongs_to_collection":null,"budget":2883848,"genres":[{"id":35,"name":"Comedy"},{"id":10402,"name":"Music"},{"id":10749,"name":"Romance"},{"id":80,"name":"Crime"}],"homepage":"","id":239,"imdb_id":"tt0053291","original_language":"en","original_title":"Some
+        Like It Hot","overview":"Two musicians witness a mob hit and struggle to find
+        a way out of the city before they are found by the gangsters. Their only opportunity
+        is to join an all-girl band as they leave on a tour. To make their getaway
+        they must first disguise themselves as women, then keep their identities secret
+        and deal with the problems this brings - such as an attractive bandmate and
+        a very determined suitor.","popularity":16.022,"poster_path":"/hVIKyTK13AvOGv7ICmJjK44DTzp.jpg","production_companies":[{"id":219,"logo_path":null,"name":"The
+        Mirisch Company","origin_country":"US"},{"id":11982,"logo_path":null,"name":"Ashton
+        Productions","origin_country":""},{"id":60,"logo_path":"/oJXpAs4I3W46e4dkaOEzCa4yBko.png","name":"United
+        Artists","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1959-03-19","revenue":25000000,"runtime":122,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Some
+        Like It Hot","video":false,"vote_average":8.2,"vote_count":2537}'
+  recorded_at: Tue, 19 Oct 2021 14:47:12 GMT
+recorded_with: VCR 6.0.0

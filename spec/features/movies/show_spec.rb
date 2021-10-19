@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe "Movie show page" do
   before :each do
     @movie = MovieFacade.search_by_id(238)
+    @user = User.create!(username: "username1", email: "testemail@gmail.com", password: "moviesRcool")
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
 
     visit movie_path(@movie.id)
   end
@@ -29,6 +31,5 @@ RSpec.describe "Movie show page" do
     expect(page).to have_button("Create Viewing Party for Movie")
     click_button "Create Viewing Party for Movie"
     expect(current_path).to eq new_party_path
-    save_and_open_page
   end
 end

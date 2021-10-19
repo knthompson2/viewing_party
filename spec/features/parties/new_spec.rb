@@ -7,10 +7,10 @@ RSpec.describe "Viewing party new" do
     @party = Party.create!(
       title: @movie_1.title,
       movie_id: @movie_1.id,
-      date: '2021-10-31'.to_date,
-      start_time: '2021-10-31 10:00:00 -0600'.to_time,
+      date: '10-31-21',
+      start_time: '10:30 AM',
       duration: 125,
-      user_id: @user.id)
+      host: @user.id)
 
     @friend_1 = User.create!(username: 'friend 1', email: 'friend@gmail.com', password: 'password')
     @friend_2 = User.create!(username: 'friend 2', email: 'friend2@gmail.com', password: 'password2')
@@ -43,14 +43,14 @@ RSpec.describe "Viewing party new" do
 
     click_on "Create Party"
     expect(current_path).to eq(user_dashboard_path(@user))
-    # expect(page).to have_content(@party.title)
+    expect(page).to have_content(@party.title)
     expect(page).to have_content("Time to Party!")
   end
 
   it 'has a sad path for creating a new party', :vcr do
     click_on "Create Party"
     expect(current_path).to eq(new_party_path)
-    # expect(page).to have_content(@party.title)
-    # expect(page).to have_content("Time to Party!")
+    expect(page).to have_content(@party.title)
+    expect(page).to have_content("All fields are required!")
   end
 end
