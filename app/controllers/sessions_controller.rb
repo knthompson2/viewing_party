@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user.authenticate(params[:password])
       session[:user_id] = user.id
-      flash[:success] = "Welcome, #{user.username}!"
+      flash[:success] = "You've been logged in!"
       redirect_to user_dashboard_path(user)
     else
       flash[:error] = 'Sorry, your credentials are bad.'

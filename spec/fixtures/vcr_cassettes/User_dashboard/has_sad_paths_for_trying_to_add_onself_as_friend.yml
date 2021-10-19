@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 19 Oct 2021 14:37:37 GMT
+      - Tue, 19 Oct 2021 17:57:40 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,23 +42,23 @@ http_interactions:
       X-Memc-Key:
       - b021e697221748056c5219e84893ed30965992af
       X-Memc-Age:
-      - '3640'
+      - '1080'
       X-Memc-Expires:
-      - '10921'
+      - '16576'
       Etag:
-      - W/"0b5c0e70eb700afcbddfd2bcb153327a"
+      - W/"8def2af43682c07586fc7a54e5ae95b7"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 e89d8ce7f3f95990dceb161aeac4f899.cloudfront.net (CloudFront)
+      - 1.1 2c861897aa9389c1f47299b6fea5b59d.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW55-C3
+      - DEN50-C2
       X-Amz-Cf-Id:
-      - "-kHpvGAdEzxQ0xJF9KZiwganf3pUX-cVHOIqZb62c9XfVttYilwgRw=="
+      - DuQ_tGCBj3UM6cc2MDX5EuwJMr4itDK4gYrmpkCmbAYHPQ88OsA5Gw==
       Age:
-      - '552'
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -70,6 +70,6 @@ http_interactions:
         of bloody revenge.","popularity":76.989,"poster_path":"/eEslKSwcqmiNS6va24Pbxf2UKmJ.jpg","production_companies":[{"id":4,"logo_path":"/fycMZt242LVjagMByZOLUGbCvv3.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.7,"vote_count":14925}'
-  recorded_at: Tue, 19 Oct 2021 14:46:49 GMT
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.7,"vote_count":14926}'
+  recorded_at: Tue, 19 Oct 2021 17:57:41 GMT
 recorded_with: VCR 6.0.0

@@ -23,4 +23,19 @@
 
 <section id="Viewing Parties">
   <h2>Viewing Parties</h2>
+  <% if current_user.parties.nil? %>
+    <p> You have no scheduled parties! </p>
+  <% else %>
+    <% current_user.parties.each do |party|  %>
+      <%= party.title %>
+      <%= party.date %>
+      <%= party.start_time %>
+      <% if party.host == current_user.id %>
+          <p> Hosting </p>
+      <% else %>
+          <p> Invited </p>
+      <% end %>
+    <% end %>
+  <% end %>
+
 </section>
