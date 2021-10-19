@@ -10,5 +10,4 @@ class User < ApplicationRecord
   has_many :parties, through: :invitees
 
   has_secure_password
-
 end

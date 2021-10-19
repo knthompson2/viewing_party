@@ -18,7 +18,7 @@ class Movie
   end
 
   def reformatted_runtime
-    "#{@runtime.to_i/60}h #{@runtime.to_i % 60}min"
+    "#{@runtime.to_i / 60}h #{@runtime.to_i % 60}min"
   end
 
   def cast
