@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'Movies index' do
   scenario 'user clicks on find top rated movies button', :vcr do
     visit discover_path
-    
+
     click_on "Find Top Rated Movies"
 
     expect(current_path).to eq(movies_path)
-    expect(page).to have_button("The Godfather")
+    expect(page).to have_link("The Godfather")
     expect(page).to have_content("8.7")
   end
 
@@ -19,7 +19,7 @@ RSpec.describe 'Movies index' do
     click_on "Find Movies"
 
     expect(current_path).to eq(movies_path)
-    expect(page).to have_button("The Godfather")
+    expect(page).to have_link("The Godfather")
     expect(page).to have_content("8.7")
   end
 
@@ -33,5 +33,25 @@ RSpec.describe 'Movies index' do
     visit movies_path
 
     expect(page).to have_button("Find Movies")
+  end
+
+  it 'user is redirected to top 40 movies if search params were blank', :vcr do
+    visit discover_path
+
+    click_on "Find Movies"
+
+    expect(current_path).to eq(movies_path)
+    expect(page).to have_link("The Godfather")
+    expect(page).to have_content("8.7")
+  end
+
+  it 'displays a list of upcoming movies', :vcr do
+    visit discover_path
+
+    click_on "Find Upcoming Movies"
+
+    expect(current_path).to eq(movies_path)
+    expect(page).to have_link("Venom")
+    expect(page).to have_content("7")
   end
 end

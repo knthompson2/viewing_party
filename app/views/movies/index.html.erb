@@ -1,29 +1,36 @@
-  <div class="movie_search">
-    <%= button_to "Find Top Rated Movies", movies_path, method: :get, local: true ,class: "btn btn-sm btn-light button-bg btn-outline-dark"%>
-    <%= render partial: 'shared/movie_search' %>
-  </div>
-
-
+<div class="movie_search">
+  <%= render partial: 'shared/movie_buttons' %>
+<br>
+  <%= render partial: 'shared/movie_search' %>
+</div>
 
 <% if @movies%>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Rating</th>
-      </tr>
-    </thead>
-    <% @movies.each do |movie| %>
-    <div>
-      <tbody>
-        <tr>
-          <td><%= button_to movie.title, movie_path(movie.id), method: :get, class: 'btn btn-sm btn-light button-bg btn-outline-dark' %></td>
-          <td>Average Vote: <%= movie.rating %></td>
-        </tr>
-      </tbody>
+<br/>
+<div align="center" id="body">
+  <div class="card navbar-custom"  style="width: 18rem;">
+    <div class="card-body">
+      <h1 class="card-title">
+        Movies
+      </h1>
     </div>
-    <% end %>
-  </table>
-<% end  %>
-
-<%= link_to 'back', discover_path(@current_user) %>
+  </div><br/><br/>
+  <% @movies.each do |movie| %>
+    <div class="card navbar-custom"  style="width: 30rem;">
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= link_to "#{movie.title}", movie_path(movie.id), class: "btn btn-sm btn-dark navbar-custom blacktext", params: { title: "#{movie.title}" }%>
+        </h5>
+        <h6 class="card-subtitle mb-2">
+          Rating: <%= movie.rating %>
+        </h6>
+        <% if movie.image %>
+          <h6 class="card-subtitle mb-2">
+            <img src="<%= movie.image %>" width=70%>
+          </h6>
+        <% end %>
+      </div>
+    </div>
+    <br/>
+  <% end %>
+</div>
+<% end %>

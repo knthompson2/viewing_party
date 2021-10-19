@@ -4,4 +4,7 @@ class Party < ApplicationRecord
   validates :date, presence: true
   validates :duration, presence: true
   validates :movie_id, presence: true
+
+  has_many :invitees
+  has_many :users, through: :invitees
 end

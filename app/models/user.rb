@@ -6,5 +6,8 @@ class User < ApplicationRecord
   has_many :friendships
   has_many :friends, through: :friendships
 
+  has_many :invitees
+  has_many :parties, through: :invitees
+
   has_secure_password
 end

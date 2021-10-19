@@ -47,5 +47,23 @@ RSpec.describe MovieFacade do
         expect(reviews.first.author).to eq("futuretv")
       end
     end
+
+    describe '.upcoming_movies', :vcr do
+      it 'returns a list of upcoming movies' do
+        upcoming = MovieFacade.upcoming_movies
+
+        expect(upcoming).to be_a(Array)
+        expect(upcoming.count).to eq(20)
+      end
+    end
+
+    describe '.similar_movies', :vcr do
+      it 'returns a list of similar movies' do
+        similar = MovieFacade.similar_movies(238)
+
+        expect(similar).to be_a(Array)
+        expect(similar.count).to eq(20)
+      end
+    end
   end
 end

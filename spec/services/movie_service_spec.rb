@@ -13,13 +13,6 @@ RSpec.describe MovieService do
     expect(top_movies.count).to eq(20)
   end
 
-  # it 'returns an array of movie genres by movie id', :vcr do
-  #   movie_genre = MovieService.movie_genres(238)
-  #
-  #   expect(movie_genre).to be_a(Array)
-  #   expect(movie_genre.first[:name]).to eq("Drama")
-  # end
-
   it 'returns an array of movie reviews', :vcr do
     movie_review = MovieService.get_reviews(238)
 
@@ -56,5 +49,23 @@ RSpec.describe MovieService do
     expect(movie).to have_key(:overview)
     expect(movie).to have_key(:vote_average)
     expect(movie).to have_key(:poster_path)
+  end
+
+  it 'returns upcoming movies', :vcr do
+    upcoming = MovieService.upcoming
+
+    expect(upcoming).to be_a(Array)
+    expect(upcoming.first).to have_key(:id)
+    expect(upcoming.first).to have_key(:title)
+    expect(upcoming.count).to eq(20)
+  end
+
+  it 'returns similar movies', :vcr do
+    similar = MovieService.similar(238)
+
+    expect(similar).to be_a(Array)
+    expect(similar.first).to have_key(:id)
+    expect(similar.first).to have_key(:title)
+    expect(similar.count).to eq(20)
   end
 end

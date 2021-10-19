@@ -4,7 +4,8 @@ class Movie
               :rating,
               :runtime,
               :genres,
-              :overview
+              :overview,
+              :image
 
   def initialize(info)
     @id = info[:id]
@@ -13,6 +14,11 @@ class Movie
     @runtime = info[:runtime]
     @genres = info[:genres].nil? ? [] : info[:genres].map { |genre| genre[:name] }
     @overview = info[:overview]
+    @image = "https://image.tmdb.org/t/p/original#{info[:poster_path]}"
+  end
+
+  def reformatted_runtime
+    "#{@runtime.to_i / 60}h #{@runtime.to_i % 60}min"
   end
 
   def cast

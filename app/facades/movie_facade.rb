@@ -13,7 +13,6 @@ class MovieFacade
     end
   end
 
-  # retrieve genre from here
   def self.search_by_id(movie_id)
     movie = MovieService.search_by_id(movie_id)
     Movie.new(movie)
@@ -30,6 +29,22 @@ class MovieFacade
     reviews = MovieService.get_reviews(movie_id)
     reviews.map do |review_data|
       Review.new(review_data)
+    end
+  end
+
+  def self.upcoming_movies
+    upcoming = MovieService.upcoming
+
+    upcoming.map do |movie|
+      Movie.new(movie)
+    end
+  end
+
+  def self.similar_movies(movie_id)
+    similar = MovieService.similar(movie_id)
+
+    similar.map do |movie|
+      Movie.new(movie)
     end
   end
 end

@@ -8,4 +8,9 @@ RSpec.describe Party, type: :model do
     it {should validate_presence_of(:duration)}
     it {should validate_presence_of(:movie_id)}
   end
+
+  describe "relationships" do
+    it {should have_many(:invitees)}
+    it {should have_many(:users).through(:invitees) }
+  end
 end
