@@ -27,14 +27,31 @@
     <p> You have no scheduled parties! </p>
   <% else %>
     <% @user.parties.each do |party|  %>
-      <%= party.title %>
+      <%= link_to "#{party.title}", movie_path(party.movie_id) %><br>
       <%= party.date %>
       <%= party.start_time %>
       <% if party.host == @user.id %>
           <p> Hosting </p>
       <% else %>
           <p> Invited </p>
+            <p>Host: <%= party.find_host(party.host).username  %> </p>
       <% end %>
+
+      <h6>Invited Guests</h6>
+      <ul>
+      <% party.invitees.each do |invitee| %>
+
+        <%  if invitee.user_id == current_user.id %>
+
+          <li> <b> <%= invitee.user.username %> </b> </li>
+
+        <% else %>
+
+          <li>  <%= invitee.user.username %> </li>
+
+        <% end %>
+      <% end %>
+      </ul>
     <% end %>
   <% end %>
 

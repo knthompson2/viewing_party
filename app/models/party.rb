@@ -7,4 +7,8 @@ class Party < ApplicationRecord
 
   has_many :invitees
   has_many :users, through: :invitees
+
+  def find_host(user_id)
+    User.find(user_id)
+  end
 end
