@@ -33,14 +33,14 @@ RSpec.describe "welcome page" do
     click_on "Sign In"
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_content("Sorry, your credentials are bad.")
+    expect(page).to have_content("Invalid Login! Check credentials or register as a user")
   end
 
   it 'has a link to register as new user' do
     visit root_path
 
     click_link("New to Viewing Party? Register Here")
-    
+
     expect(current_path).to eq(new_user_path)
   end
 end

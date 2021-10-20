@@ -13,10 +13,10 @@ class PartiesController < ApplicationController
       end
       Invitee.create(user: current_user, party: party)
       redirect_to user_dashboard_path(current_user)
-      flash[:success] = "Time to Party!"
+      flash[:success] = 'Time to Party!'
     else
       redirect_to new_party_path(movie_id: params[:party][:movie_id])
-      flash[:error] = "All fields are required!"
+      flash[:error] = 'All fields are required!'
     end
   end
 

@@ -20,7 +20,7 @@ RSpec.describe "Viewing party new" do
     @user.friends << @friend_1
     @user.friends << @friend_2
     visit movie_path(@movie_1.id)
-    click_on "Create Viewing Party for Movie"
+    click_on "Create Viewing Party for #{@movie_1.title}"
   end
 
   it 'displays a form to create a new viewing party', :vcr do
@@ -42,6 +42,7 @@ RSpec.describe "Viewing party new" do
     check 'friend 1'
 
     click_on "Create Party"
+    
     expect(current_path).to eq(user_dashboard_path(@user))
     expect(page).to have_content(@party.title)
     expect(page).to have_content("Time to Party!")

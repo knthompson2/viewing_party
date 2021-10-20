@@ -1,6 +1,6 @@
 <div class="movie_search">
-  <%= button_to "Find Top Rated Movies", movies_path, method: :get, local: true ,class: "btn btn-sm btn-light button-bg btn-outline-dark"%>
-
+  <%= render partial: 'shared/movie_buttons' %>
+<br>
   <%= render partial: 'shared/movie_search' %>
 </div>
 
@@ -21,7 +21,7 @@
           <%= link_to "#{movie.title}", movie_path(movie.id), class: "btn btn-sm btn-dark navbar-custom blacktext", params: { title: "#{movie.title}" }%>
         </h5>
         <h6 class="card-subtitle mb-2">
-          Rating: <%= movie.rating %>
+          <b>Rating:</b> <%= movie.rating %>
         </h6>
         <% if movie.image %>
           <h6 class="card-subtitle mb-2">

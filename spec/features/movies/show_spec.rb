@@ -28,8 +28,17 @@ RSpec.describe "Movie show page" do
   end
 
   it 'links a viewing party for that movie', :vcr do
-    expect(page).to have_button("Create Viewing Party for Movie")
-    click_button "Create Viewing Party for Movie"
+    expect(page).to have_button("Create Viewing Party for #{@movie.title}")
+    click_button "Create Viewing Party for #{@movie.title}"
     expect(current_path).to eq new_party_path
+  end
+
+  it 'displays a list of similar movies', :vcr do
+
+    movies = MovieFacade.similar_movies(238)
+    movies.each do |movie|
+      expect(page).to have_content(movie.title)
+      expect(page).to have_content(movie.rating)
+    end
   end
 end
