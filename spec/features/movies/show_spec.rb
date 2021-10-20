@@ -34,7 +34,11 @@ RSpec.describe "Movie show page" do
   end
 
   it 'displays a list of similar movies', :vcr do
-    expect(page).to have_link("Lethal Weapon 2")
-    expect(page).to have_link("Mission: Impossible III")
+
+    movies = MovieFacade.similar_movies(238)
+    movies.each do |movie|
+      expect(page).to have_content(movie.title)
+      expect(page).to have_content(movie.rating)
+    end
   end
 end

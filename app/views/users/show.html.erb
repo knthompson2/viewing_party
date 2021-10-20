@@ -29,13 +29,14 @@
   <% if @user.parties.count == 0 %>
   <p> You have no scheduled parties! </p>
   <% else %>
+
   <% @user.parties.each do |party|  %>
       <!-- <div class="container"> -->
         <div class="row justify-content-md-center">
           <div class="col-sm-8">
             <div class="card text-center shadow mb-5 bg-white rounded">
               <div class="card-header">
-                <h4><%= party.title %></h4>
+                <h4><%= link_to "#{party.title}", movie_path(party.movie_id) %><br></h4>
               </div>
               <div class="card-body">
                 <h5 class="card-text"><%= party.date %></h5>
@@ -44,12 +45,26 @@
                 <h5 class="card-text"> <b>Hosting</b> </h5>
                 <% else %>
                 <h5 class="card-text"> <b>Invited</b> </h5>
+                <h5 class="card-text"> <b>  Host: </b> <%= party.find_host(party.host).username  %>  </h5>
+
+                <h6>Invited Guests</h6>
+                <ul>
+                <% party.invitees.each do |invitee| %>
+                  <%  if invitee.user_id == current_user.id %>
+                    <li> <b> <%= invitee.user.username %> </b> </li>
+                  <% else %>
+                    <li>  <%= invitee.user.username %> </li>
+                  <% end %>
+                <% end %>
+                </ul>
+
                 <% end %>
               </div>
             </div>
             <% end %>
           </div>
         </div>
-      <!-- </div> -->
+
+
     <% end %>
   </section>

@@ -113,9 +113,12 @@ RSpec.describe 'User dashboard' do
     click_on "Sign In"
     expect(current_path).to eq(user_dashboard_path(friend1))
     expect(page).to have_content("Viewing Parties")
-    expect(page).to have_content(party.title)
+    expect(page).to have_link(party.title)
     expect(page).to have_content(party.date)
     expect(page).to have_content(party.start_time)
     expect(page).to have_content("Invited")
+    party.users.each do |user|
+      expect(page).to have_content(user.username)
+    end
   end
 end
