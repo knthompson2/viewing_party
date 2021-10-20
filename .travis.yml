@@ -1,6 +1,6 @@
 language: ruby
 rbenv:
-- 2.5.3
+- 2.7.2
 addons:
   postgresql: 9.6
 script:
@@ -8,6 +8,8 @@ script:
 - bundle exec rspec
 deploy:
   provider: heroku
-  api_key:
-  app:
+  api_key: 6519ceb9368c144d4aa93f3b6dc61d81
+  app: viewing-party-kelze
   run: rails db:migrate
+  on:
+    branch: main
