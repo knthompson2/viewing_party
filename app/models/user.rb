@@ -3,10 +3,10 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :password, presence: true
 
-  has_many :friendships
+  has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
 
-  has_many :invitees
+  has_many :invitees, dependent: :destroy
   has_many :parties, through: :invitees
 
   has_secure_password

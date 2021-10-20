@@ -5,7 +5,7 @@ class Party < ApplicationRecord
   validates :duration, presence: true
   validates :movie_id, presence: true
 
-  has_many :invitees
+  has_many :invitees, dependent: :destroy
   has_many :users, through: :invitees
 
   def find_host(user_id)

@@ -5,7 +5,6 @@ class PartiesController < ApplicationController
   end
 
   def create
-    # require "pry"; binding.pry
     party = Party.create(party_params)
     if party.save
       params[:party][:users].each do |user|

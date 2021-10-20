@@ -2,7 +2,6 @@ class FriendshipsController < ApplicationController
   def create
     friend = User.find_by(email: params[:email])
     friendship = Friendship.find_by(user: current_user, friend: friend)
-    # binding.pry
     if friend && friend.email == current_user.email
       flash[:error] = 'You cannot add yourself as a friend'
     elsif friend && friendship.nil?
