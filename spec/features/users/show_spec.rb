@@ -111,7 +111,6 @@ RSpec.describe 'User dashboard' do
     fill_in :email, with: "test123@gmail.com"
     fill_in :password, with: "test"
     click_on "Sign In"
-    save_and_open_page
     expect(current_path).to eq(user_dashboard_path(friend1))
     expect(page).to have_content("Viewing Parties")
     expect(page).to have_link(party.title)
@@ -119,5 +118,7 @@ RSpec.describe 'User dashboard' do
     expect(page).to have_content(party.start_time)
     expect(page).to have_content("Invited")
     party.users.each do |user|
+      expect(page).to have_content(user.username)
+    end
   end
 end

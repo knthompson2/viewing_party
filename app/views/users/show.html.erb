@@ -40,15 +40,10 @@
       <h6>Invited Guests</h6>
       <ul>
       <% party.invitees.each do |invitee| %>
-
         <%  if invitee.user_id == current_user.id %>
-
           <li> <b> <%= invitee.user.username %> </b> </li>
-
         <% else %>
-
           <li>  <%= invitee.user.username %> </li>
-
         <% end %>
       <% end %>
       </ul>
