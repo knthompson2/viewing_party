@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movies = if params[:search] == ""
+    @movies = if params[:search] == ''
                 MovieFacade.top_40_movies
               elsif params[:search]
                 MovieFacade.search_by_title(params[:search])

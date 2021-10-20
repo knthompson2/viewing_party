@@ -21,7 +21,7 @@
           <%= link_to "#{movie.title}", movie_path(movie.id), class: "btn btn-sm btn-dark navbar-custom blacktext", params: { title: "#{movie.title}" }%>
         </h5>
         <h6 class="card-subtitle mb-2">
-          Rating: <%= movie.rating %>
+          <b>Rating:</b> <%= movie.rating %>
         </h6>
         <% if movie.image %>
           <h6 class="card-subtitle mb-2">
